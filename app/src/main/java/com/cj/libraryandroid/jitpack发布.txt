@@ -1,0 +1,16 @@
+
+1项目build.gradle:
+    编译脚本中：classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    allprojects{
+        jcenter()
+        maven{url 'https://jitpack.io'}
+    }
+
+2 library build.gradle:
+    apply plugin: 'com.github.dcendents.android-maven'
+    group='com.github.username' eg. group='com.github.cjbkemp'
+
+3 删除 library build.gradle 中test,androidTest,android support中一些库依赖
+  删除 test,androidtest文件夹
+
+4 release github项目
