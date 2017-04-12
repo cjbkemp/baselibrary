@@ -19,7 +19,7 @@ public class CacheInterceptor implements Interceptor {
         Request oldRequest=chain.request();
         String cacheControl=oldRequest.cacheControl().toString();
         Response oldResponse=chain.proceed(oldRequest);
-        if(NetworkUtils.isNetConnected(BaseApplication.getContext())){
+        if(NetworkUtils.isConnected(BaseApplication.getContext())){
             return oldResponse.newBuilder()
                         .header("Cache-Control",cacheControl)
                         .removeHeader("Pragma")
